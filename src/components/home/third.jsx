@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { compare } from '../../const/json';
 import Select from '../utils/select';
 import Info from '../utils/info';
+import gsap from 'gsap';
 
 const Third = () => {
   const [s1, setS1] = useState({ m: 0, v: 0 });
@@ -12,7 +13,7 @@ const Third = () => {
   const [c2, setC2] = useState(compare[s2.m].v[s2.v]);
   const [s3, setS3] = useState(null);
   const [o3, setO3] = useState(false);
-  const [c3, setC3] = useState(compare[s3?.m]?.v[s3?.v]);
+  const [c3, setC3] = useState(compare[2].v[0]);
 
   useEffect(() => {
     setC1(compare[s1.m].v[s1.v]);
@@ -31,7 +32,7 @@ const Third = () => {
         </h2>
       </article>
       <article className={`w-full lg:px-[10%] flex-row justify-center relative overflow-hidden`}>
-        <div id='cms1' className={`${s3 ? 'w-1/3' : 'w-[45%]'} flex-col flex-center gap-5`}>
+        <div id='cms1' className={`${s3 ? 'w-1/3' : 'w-[46%]'} flex-col flex-center gap-5`}>
           <img src={compare[s1.m].img} alt={compare[s1.m].name} className='scale-125' />
           <div
             onClick={() => {
@@ -52,7 +53,7 @@ const Third = () => {
           </div>
           <Info c1={c1} />
         </div>
-        <div id='cms2' className={`${s3 ? 'w-1/3' : 'w-[45%]'} flex-col flex-center gap-5`}>
+        <div id='cms2' className={`${s3 ? 'w-1/3' : 'w-[46%]'} flex-col flex-center gap-5`}>
           <img src={compare[s2.m].img} alt={compare[s2.m].name} className='scale-125' />
           <div
             onClick={() => {
@@ -73,36 +74,44 @@ const Third = () => {
           </div>
           <Info c2={c2} />
         </div>
-        {s3 ? (
-          <div id='cms3' className='w-1/3 flex-col flex-center gap-5 relative'>
+        <div id='cms3' className={`portrait:hidden ${s3 ? 'w-1/3' : 'w-[10%]'} flex-col flex-center gap-5`}>
+          {s3 ? (
             <img src={compare[s3.m].img} alt={compare[s3.m].name} className='scale-125' />
-            <div
+          ) : (
+            <button
+              id='abtn'
+              type='button'
               onClick={() => {
-                if (!o3) {
-                  setO1(false);
-                  setO2(false);
-                  setO3(true);
-                }
+                setS3(0 !== s1.m && 0 !== s2.m ? { m: 0, v: 0 } : 1 !== s1.m && 1 !== s2.m ? { m: 1, v: 0 } : 2 !== s1.m && 2 !== s2.m ? { m: 2, v: 0 } : 3 !== s1.m && 3 !== s2.m && { m: 3, v: 0 });
+                gsap.from('#cms3', { xPercent: 100, opacity: 0 });
               }}
-              className={`w-[80%] h-16 px-5 flex-col justify-center border ${o3 ? 'bg-gray-200 rounded-t-xl border-black' : 'bg-gray-100 rounded-xl border-transparent'} cursor-pointer duration-150 relative`}
+              className='absolute top-[10%] right-[8%] hidden lg:block'
             >
-              <h1 className='text-2xl font-semibold select-none'>{compare[s3.m].name}</h1>
-              <h2 className='text-lg select-none'>{compare[s3.m].v[s3.v].name}</h2>
-              <button onClick={() => o3 && setO3(false)} className='absolute right-5'>
-                <img src={o3 ? '/svgs/close.svg' : '/svgs/downA.svg'} alt='open' className='w-6 h-6' />
-              </button>
-              {o3 && <Select o1={o1} o2={o2} o3={o3} c1={c1} c2={c2} c3={c3} setS={setS3} setO={setO3} />}
-            </div>
-            <Info c3={c3} />
-            <button type='button' onClick={() => setS3(null)} className='absolute top-2 right-2'>
-              <img src='/svgs/close.svg' alt='close' className='w-8 h-8 border border-black rounded-full' />
+              <img src='/svgs/plus.svg' alt='plus' className='w-8 h-8 border border-black rounded-full' />
             </button>
+          )}
+          <div
+            onClick={() => {
+              if (!o3) {
+                setO1(false);
+                setO2(false);
+                setO3(true);
+              }
+            }}
+            className={`${!s3 && 'hidden'} w-[80%] h-16 px-5 flex-col justify-center border ${o3 ? 'bg-gray-200 rounded-t-xl border-black' : 'bg-gray-100 rounded-xl border-transparent'} cursor-pointer duration-150 relative`}
+          >
+            <h1 className='text-2xl font-semibold select-none'>{compare[s3?.m]?.name}</h1>
+            <h2 className='text-lg select-none'>{compare[s3?.m]?.v[s3?.v]?.name}</h2>
+            <button onClick={() => o3 && setO3(false)} className='absolute right-5'>
+              <img src={o3 ? '/svgs/close.svg' : '/svgs/downA.svg'} alt='open' className='w-6 h-6' />
+            </button>
+            {o3 && <Select o1={o1} o2={o2} o3={o3} c1={c1} c2={c2} c3={c3} setS={setS3} setO={setO3} />}
           </div>
-        ) : (
-          <button type='button' onClick={() => setS3({ m: 2, v: 0 })} className='absolute top-[10%] right-[8%] hidden lg:block'>
-            <img src='/svgs/plus.svg' alt='plus' className='w-8 h-8 border border-black rounded-full' />
+          <Info c3={c3} h={!s3} />
+          <button type='button' onClick={() => setS3(null)} className={`${!s3 && 'hidden'} absolute top-2 right-2`}>
+            <img src='/svgs/close.svg' alt='close' className='w-8 h-8 border border-black rounded-full' />
           </button>
-        )}
+        </div>
       </article>
     </section>
   );
