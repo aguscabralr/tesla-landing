@@ -3,13 +3,12 @@ import { cars } from '../../const/json';
 import { previous, selected } from '../../gsap/gsap';
 
 const Second = () => {
-  const [select, setSelect] = useState(null);
+  const [select, setSelect] = useState(cars[0]);
   const [before, setBefore] = useState(null);
   const [prev, setPrev] = useState(null);
 
   const handleSelect = (car) => {
     if (select && select.name === car.name) {
-      setSelect(null);
       setBefore(null);
       setPrev(null);
     } else {
@@ -31,17 +30,17 @@ const Second = () => {
       <h1 id='vhtx' className='px-[5%] text-5xl'>
         Vehicles.
       </h1>
-      <article className={`w-full ${select ? 'h-[calc(100svh-64px)]' : 'h-fit'} flex-col`}>
+      <article id='vh' className={`w-full h-[calc(100vh-64px)] flex-col overflow-hidden`}>
         <div className={`w-full flex-evenly flex-wrap lg:flex-nowrap`}>
           {cars.map((car, indx) => {
             return (
-              <div key={car.name} onClick={() => handleSelect(cars[indx])} className={`show w-[30%] lg:w-[15%] aspect-video flex-col flex-center ${car.name === select?.name ? 'opacity-100' : 'opacity-20'} hover:cursor-pointer duration-300`}>
+              <div key={car.name} id={car.ab} onClick={() => handleSelect(cars[indx])} className={`cars w-[30%] lg:w-[15%] aspect-video ${car.name === select.name ? 'brightness-100' : 'brightness-[20%]'} hover:cursor-pointer hover:brightness-75 transition-[filter] duration-300`}>
                 <img src={car.img} alt={car.name} className='p-1 lg:p-4' />
               </div>
             );
           })}
         </div>
-        <div className={`w-full ${select ? 'h-3/4 bg' : 'h-0'} flex-col items-start relative overflow-hidden`}>
+        <div className={`w-full h-[calc((100vh-64px)*3/4)] bg flex-col items-start relative overflow-hidden`}>
           <div id='select' className='w-full h-full flex-col lg:flex-row flex-center'>
             <div id='seltx' className='w-full flex-col flex-center lg:hidden'>
               <h2 className='text-5xl lg:text-8xl'>{select?.name}</h2>

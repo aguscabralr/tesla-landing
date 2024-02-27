@@ -113,10 +113,15 @@ export const sT = () => {
     scrollTrigger: {
       trigger: '#second',
       scrub: 2,
-      start: 'top 70%',
-      end: 'bottom 80%',
+      start: 'top bottom',
+      end: 'center 90%',
     },
   });
+
+  vhtl.from('#vhtx', { yPercent: 100 });
+  const showCars = gsap.utils.toArray('.cars');
+  showCars.map((car) => vhtl.from(car, { xPercent: 100, opacity: 0 }));
+
   const cmtl = gsap.timeline({
     scrollTrigger: {
       trigger: '#third',
@@ -124,12 +129,6 @@ export const sT = () => {
       start: 'top 70%',
       end: 'center 90%',
     },
-  });
-
-  vhtl.from('#vhtx', { yPercent: 100, opacity: 0 });
-  const carShow = gsap.utils.toArray('.show');
-  carShow.map((car) => {
-    vhtl.from(car, { opacity: 0, yPercent: 100 });
   });
 
   cmtl.from('#cmtx', { yPercent: 100, opacity: 0 });

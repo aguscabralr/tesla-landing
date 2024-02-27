@@ -1,9 +1,9 @@
 export const cars = [
-  { name: 'Model S', img: '/images/modelS.avif', link: '/models' },
-  { name: 'Model 3', img: '/images/model3.avif', link: '/model3' },
-  { name: 'Model X', img: '/images/modelX.avif', link: '/modelx' },
-  { name: 'Model Y', img: '/images/modelY.avif', link: '/modely' },
-  { name: 'CyberTruck', img: '/images/cyberTruck.avif', link: '/cyberTruck' },
+  { name: 'Model S', ab: 'ms', img: '/images/modelS.avif', link: '/models' },
+  { name: 'Model 3', ab: 'm3', img: '/images/model3.avif', link: '/model3' },
+  { name: 'Model X', ab: 'mx', img: '/images/modelX.avif', link: '/modelx' },
+  { name: 'Model Y', ab: 'my', img: '/images/modelY.avif', link: '/modely' },
+  { name: 'CyberTruck', ab: 'ct', img: '/images/cyberTruck.avif', link: '/cyberTruck' },
 ];
 
 export const compare = [
