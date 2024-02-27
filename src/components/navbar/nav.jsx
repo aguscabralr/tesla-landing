@@ -21,7 +21,7 @@ const NavBar = () => {
 
   return (
     <nav className={`w-full h-16 flex-between fixed top-0 z-50 ${!topNav && 'shadow-2xl'} duration-200`}>
-      <Side sideBar={sideBar} topNav={topNav} />
+      <Side sideBar={sideBar} setSideBar={setSideBar} topNav={topNav} />
       <section onClick={() => setSideBar(false)} className={`w-1/2 h-[100svh] absolute top-0 ${sideBar ? 'left-0' : 'left-[-50%]'}`}></section>
       {pathname.length === 1 ? (
         <section className={`w-full h-full backdrop-blur-md flex-center lg:hidden ${!topNav ? 'text-black' : 'text-white'} duration-500`}>
