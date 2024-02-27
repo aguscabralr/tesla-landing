@@ -8,7 +8,7 @@ const Detail = () => {
   console.log(detailOf);
   return (
     <section>
-      <video src={detailOf.vid} autoPlay loop className='w-full h-full object-cover absolute top-0 left-0'></video>
+      <video src={detailOf.vid} autoPlay loop className='w-full h-full object-cover absolute top-0 left-0 bg-black'></video>
       <article className='w-full h-full pt-20 pb-10 flex-col flex-between z-10 absolute top-0 left-0 text-white'>
         <div className='flex-col flex-center gap-5'>
           <h1 className='text-5xl font-bold'>{detailOf.name}</h1>
