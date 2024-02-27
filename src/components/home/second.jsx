@@ -40,7 +40,7 @@ const Second = () => {
             );
           })}
         </div>
-        <div className={`w-full h-[calc((100vh-64px)*3/4)] bg flex-col items-start relative overflow-hidden`}>
+        <div id='shower' className={`w-full h-[calc((100vh-64px)*3/4)] bg flex-col items-start relative overflow-hidden`}>
           <div id='select' className='w-full h-full flex-col lg:flex-row flex-center'>
             <div id='seltx' className='w-full flex-col flex-center lg:hidden'>
               <h2 className='text-5xl lg:text-8xl'>{select?.name}</h2>
