@@ -11,7 +11,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoad(true);
-    }, 1000);
+    }, 500);
 
     if (load) {
       wC();
@@ -20,12 +20,12 @@ const App = () => {
   });
 
   return (
-    <main className='w-full h-full'>
+    <main className='w-full min-h-svh bg-white dark:bg-zinc-700'>
       {load ? (
         <>
           <NavBar />
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Home load={load} />} />
             <Route path='/:name' element={<Detail />} />
           </Routes>
         </>
