@@ -9,10 +9,15 @@ export default {
         md: '640px',
         lg: '1024px',
         xl: '1536px',
+        landscape: '1024px',
       },
       colors: {
         rd: '#c90000',
         gry: '#5e5e5e',
+      },
+      backgroundImage: {
+        grl: 'linear-gradient(180deg, #fff, #fff, #5e5e5e, #fff)',
+        grd: 'linear-gradient(180deg, #3f3f46, #3f3f46, #e5e5e5, #3f3f46)',
       },
     },
   },
