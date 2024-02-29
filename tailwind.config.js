@@ -16,8 +16,8 @@ export default {
         gry: '#5e5e5e',
       },
       backgroundImage: {
-        grl: 'linear-gradient(180deg, #fff, #fff, #5e5e5e, #fff)',
-        grd: 'linear-gradient(180deg, #3f3f46, #3f3f46, #e5e5e5, #3f3f46)',
+        grl: 'linear-gradient(180deg, #ffffff, #ffffff, #5e5e5e, #ffffff, #ffffff)',
+        grd: 'linear-gradient(180deg, #3f3f46, #3f3f46, #e5e5e5, #3f3f46, #3f3f46)',
       },
     },
   },
