@@ -27,7 +27,7 @@ const Second = () => {
 
   return (
     <section id='second' className='w-full pt-20 flex flex-col gap-y-5 text-black dark:text-white'>
-      <h1 id='vhtx' className='px-[5%] text-[7vw]'>
+      <h1 id='vhtx' className='px-[5%] text-[10vw] landscape:text-[7vw]'>
         Vehicles.
       </h1>
       <article id='vh' className={`w-full h-[calc(100vh-64px)] flex flex-col overflow-hidden`}>
