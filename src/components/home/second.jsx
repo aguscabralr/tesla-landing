@@ -26,50 +26,30 @@ const Second = () => {
   }, [select]);
 
   return (
-    <section id='second' className='w-full pt-20 flex-col gap-y-5'>
-      <h1 id='vhtx' className='px-[5%] text-5xl'>
+    <section id='second' className='w-full pt-20 flex flex-col gap-y-5 text-black dark:text-white'>
+      <h1 id='vhtx' className='px-[5%] text-[7vw]'>
         Vehicles.
       </h1>
-      <article id='vh' className={`w-full h-[calc(100vh-64px)] flex-col overflow-hidden`}>
-        <div className={`w-full flex-evenly flex-wrap lg:flex-nowrap`}>
+      <article id='vh' className={`w-full h-[calc(100vh-64px)] flex flex-col overflow-hidden`}>
+        <div className={`w-full flex justify-evenly items-center flex-wrap landscape:flex-nowrap`}>
           {cars.map((car, indx) => {
             return (
-              <div key={car.name} id={car.ab} onClick={() => handleSelect(cars[indx])} className={`cars w-[30%] lg:w-[15%] aspect-video ${car.name === select.name ? 'brightness-100' : 'brightness-[20%]'} hover:cursor-pointer hover:brightness-75 transition-[filter] duration-300`}>
-                <img src={car.img} alt={car.name} className='p-1 lg:p-4' />
+              <div key={car.name} id={car.ab} onClick={() => handleSelect(cars[indx])} className={`cars w-[30%] landscape:w-[15%] aspect-video ${car.name === select.name ? 'brightness-100' : 'brightness-[20%]'} hover:cursor-pointer hover:brightness-75 transition-[filter] duration-300`}>
+                <img src={car.img} alt={car.name} className='p-1 landscape:p-4' />
               </div>
             );
           })}
         </div>
-        <div id='shower' className={`w-full h-[calc((100vh-64px)*3/4)] bg flex-col items-start relative overflow-hidden`}>
-          <div id='select' className='w-full h-full flex-col lg:flex-row flex-center'>
-            <div id='seltx' className='w-full flex-col flex-center lg:hidden'>
-              <h2 className='text-5xl lg:text-8xl'>{select?.name}</h2>
-              <a href={select?.link} target='_blank' rel='noreferrer' className='underline hover:text-white'>
-                Learn
-              </a>
-            </div>
-            <img src={select?.img} alt={select?.name} className='w-full lg:w-auto lg:h-full p-5 z-10' />
-            <div id='seltx' className='w-1/2 h-full flex-col flex-center hidden lg:flex'>
-              <h2 className='text-5xl lg:text-8xl'>{select?.name}</h2>
-              <a href={select?.link} target='_blank' rel='noreferrer' className='underline hover:text-white'>
-                Learn
-              </a>
-            </div>
-          </div>
-          <div id='prev' className='w-full h-full flex-col lg:flex-row flex-center absolute left-[-100%]'>
-            <div className='w-full flex-col flex-center lg:hidden'>
-              <h2 className='text-5xl lg:text-8xl'>{prev?.name}</h2>
-              <a href={select?.link} target='_blank' rel='noreferrer' className='underline hover:text-white'>
-                Learn
-              </a>
-            </div>
-            <img src={prev?.img} alt={prev?.name} className='w-full lg:w-auto lg:h-full p-5 z-10' />
-            <div className='w-1/2 h-full flex-col flex-center hidden lg:flex'>
-              <h2 className='text-5xl lg:text-8xl'>{prev?.name}</h2>
-              <a href={select?.link} target='_blank' rel='noreferrer' className='underline hover:text-white'>
-                Learn
-              </a>
-            </div>
+        <div id='shower' className={`w-full h-[calc((100vh-64px)*3/4)] bg-grl dark:bg-grd flex flex-col items-start relative overflow-hidden`}>
+          <a id='select' href={select?.link} className='w-full h-full flex flex-col landscape:flex-row justify-center items-center text-white portrait:text-black dark:text-black portrait:dark:text-white hover:text-black dark:hover:text-white'>
+            <h2 className='text-[6vw]'>{select?.name.split(' ')[0]}</h2>
+            <img src={select?.img} alt={select?.name} className='z-10' />
+            <h2 className='text-[6vw]'>{select?.name.split(' ')[1]}</h2>
+          </a>
+          <div id='prev' className='w-full h-full flex flex-col landscape:flex-row justify-center items-center text-white portrait:text-black dark:text-black portrait:dark:text-white absolute left-[-100%]'>
+            <h2 className='text-[6vw]'>{prev?.name.split(' ')[0]}</h2>
+            <img src={prev?.img} alt={prev?.name} className='w-full landscape:w-auto landscape:h-full p-5 z-10' />
+            <h2 className='text-[6vw]'>{prev?.name.split(' ')[1]}</h2>
           </div>
         </div>
       </article>
