@@ -1,5 +1,5 @@
-import TeslaL from '../../assets/tesla/teslaL';
 import TeslaLT from '../../assets/tesla/teslaLT';
+// import TeslaL from '../../assets/tesla/teslaL';
 
 const First = () => {
   return (
@@ -12,7 +12,7 @@ const First = () => {
         <div id='lghb' className='w-full h-1/2 bg-black absolute top-0 landscape:hidden'></div>
         <div id='lgwb' className='w-1/2 h-full bg-black absolute left-0 hidden landscape:block'></div>
         <div id='lg' className='w-full h-full flex justify-center items-center pt-16 z-10'>
-          <TeslaL color={'#c90000'} />
+          {/* <TeslaL color={'#c90000'} /> */}
         </div>
       </article>
     </section>
