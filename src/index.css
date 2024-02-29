@@ -12,9 +12,6 @@
   border: 2px green solid;
 }
 
-.bg-grad-light {
-  background-image: linear-gradient(180deg, #fff, #fff, #5e5e5e, #fff);
-}
-.bg-grad-dark {
-  background-image: linear-gradient(180deg, #3f3f46, #3f3f46, #e5e5e5, #3f3f46);
+.pop {
+  font-family: 'poppins';
 }
