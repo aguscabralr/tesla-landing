@@ -20,7 +20,7 @@ const App = () => {
   });
 
   return (
-    <main className='w-full min-h-svh bg-white dark:bg-zinc-700'>
+    <main className='w-full min-h-svh bg-white dark:bg-zinc-700 pop'>
       {load ? (
         <>
           <NavBar />
