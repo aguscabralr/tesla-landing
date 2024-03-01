@@ -24,13 +24,15 @@ export const scrollTo = (href) => {
 export const wC = () => {
   const tl = gsap.timeline();
   if (wConfig.ratio < 1) {
-    tl.from('#tsct', { yPercent: -100 });
+    tl.from('#tsct', { yPercent: -100 }, '+=1');
     tl.from('#lghb', { yPercent: -300 }, '-=0.45');
     tl.from('#lg', { xPercent: -200 });
+    tl.from('#nav', { yPercent: -100, opacity: 0 });
   } else {
-    tl.from('#tsct', { xPercent: -100 });
+    tl.from('#tsct', { xPercent: -100 }, '+=1');
     tl.from('#lgwb', { xPercent: -300 }, '-=0.45');
     tl.from('#lg', { yPercent: -200 });
+    tl.from('#nav', { yPercent: -100, opacity: 0 });
   }
 };
 
@@ -39,7 +41,7 @@ export const sT = () => {
     scrollTrigger: {
       trigger: '#second',
       scrub: 2,
-      start: 'top bottom',
+      start: 'top 80%',
       end: '90% bottom',
     },
   });
