@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-setTimeout(() => {
+export const loadModel = () => {
   const logo = document.getElementById('lg');
 
   const sizes = {
@@ -17,13 +17,14 @@ setTimeout(() => {
   scene.add(camera);
 
   let teslaM = null;
-  const textureLoader = new THREE.TextureLoader();
-  const matcapTexture = textureLoader.load('/vidrio.png');
-  matcapTexture.colorSpace = THREE.SRGBColorSpace;
-  const material = new THREE.MeshMatcapMaterial({
-    matcap: matcapTexture,
-    color: '#c90000',
-  });
+
+  // const textureLoader = new THREE.TextureLoader();
+  // const matcapTexture = textureLoader.load('/vidrio.png');
+  // matcapTexture.colorSpace = THREE.SRGBColorSpace;
+  // const material = new THREE.MeshMatcapMaterial({
+  //   matcap: matcapTexture,
+  //   color: '#c90000',
+  // });
 
   const gltfLoader = new GLTFLoader();
   gltfLoader.load('/teslaL.glb', (gltf) => {
@@ -53,18 +54,6 @@ setTimeout(() => {
 
   logo.appendChild(renderer.domElement);
 
-  window.addEventListener('mousemove', (event) => {
-    const center = {
-      x: window.innerWidth - window.innerWidth / 4,
-      y: window.innerHeight / 2,
-    };
-
-    const { clientX, clientY } = event;
-
-    console.log(center.x, clientX);
-    light.position.x = clientX < center.x ? -center.x / clientX : clientX;
-  });
-
   const animate = () => {
     const clock = new THREE.Clock();
     let previousTime = 0;
@@ -87,4 +76,4 @@ setTimeout(() => {
   };
 
   animate();
-}, 2000);
+};
