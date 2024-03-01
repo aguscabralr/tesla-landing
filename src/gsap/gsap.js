@@ -55,8 +55,9 @@ export const sT = () => {
     scrollTrigger: {
       trigger: '#third',
       scrub: 2,
-      start: 'top 70%',
-      end: 'bottom bottom',
+      start: 'top 80%',
+      end: '95% bottom',
+      markers: true,
     },
   });
 
@@ -74,13 +75,13 @@ export const sT = () => {
   const drv = gsap.utils.toArray('.drv');
   const acc = gsap.utils.toArray('.acc');
   const spd = gsap.utils.toArray('.spd');
-  bsp.map((ele) => cmtl.from(ele, 0.2, { yPercent: 100, opacity: 0 }));
-  rng.map((ele) => cmtl.from(ele, 0.2, { yPercent: 100, opacity: 0 }));
-  stg.map((ele) => cmtl.from(ele, 0.2, { yPercent: 100, opacity: 0 }));
-  crg.map((ele) => cmtl.from(ele, 0.2, { yPercent: 100, opacity: 0 }));
-  drv.map((ele) => cmtl.from(ele, 0.2, { yPercent: 100, opacity: 0 }));
-  acc.map((ele) => cmtl.from(ele, 0.2, { yPercent: 100, opacity: 0 }));
-  spd.map((ele) => cmtl.from(ele, 0.2, { yPercent: 100, opacity: 0 }));
+  bsp.map((ele) => cmtl.from(ele, 0.08, { yPercent: 100, opacity: 0 }));
+  rng.map((ele) => cmtl.from(ele, 0.08, { yPercent: 100, opacity: 0 }));
+  stg.map((ele) => cmtl.from(ele, 0.08, { yPercent: 100, opacity: 0 }));
+  crg.map((ele) => cmtl.from(ele, 0.08, { yPercent: 100, opacity: 0 }));
+  drv.map((ele) => cmtl.from(ele, 0.08, { yPercent: 100, opacity: 0 }));
+  acc.map((ele) => cmtl.from(ele, 0.08, { yPercent: 100, opacity: 0 }));
+  spd.map((ele) => cmtl.from(ele, 0.08, { yPercent: 100, opacity: 0 }));
 };
 
 export const crx = () => {
