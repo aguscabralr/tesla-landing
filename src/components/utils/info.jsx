@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 const Info = ({ c1, c2, c3, h }) => {
   return (
-    <div className={`w-[95%] landscape:w-[80%] px-5 flex flex-col gap-5 ${h && 'hidden'}`}>
+    <div className={`w-[95%] landscape:w-[80%] px-2 landscape:px-5 flex flex-col gap-5 ${h && 'hidden'}`}>
       <div className={`bsp ${c1 ? 'comp1' : c2 ? 'comp2' : c3 && 'comp3'} flex flex-col`}>
         <span>Base Price</span>
         <h2 className='text-xl font-semibold'>{c1?.prc || c2?.prc || c3?.prc}</h2>
