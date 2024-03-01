@@ -22,17 +22,17 @@ const Third = () => {
   }, [s1, s2, s3]);
 
   return (
-    <section id='third' className='w-full pt-20 mb-20 flex-col gap-y-10'>
-      <article className='flex-col gap-5'>
-        <h1 id='cmtx' className='px-[5%] text-5xl'>
+    <section id='third' className='w-full pt-20 mb-20 flex flex-col gap-y-10 text-black dark:text-white'>
+      <article className='flex flex-col gap-5'>
+        <h1 id='cmtx' className='px-[5%] text-[10vw] landscape:text-[7vw]'>
           Compare Models.
         </h1>
-        <h2 id='cmst' className='px-[5%] text-xl'>
+        <h2 id='cmst' className='px-[5%] text-[3.5vw] landscape:text-[1.5vw]'>
           Discover which Tesla models meet your needs by answering questions about your budget, driving habits and lifestyle.
         </h2>
       </article>
-      <article className={`w-full lg:px-[10%] flex-row justify-center relative overflow-hidden`}>
-        <div id='cms1' className={`${s3 ? 'w-1/3' : 'w-[46%]'} flex-col flex-center gap-5`}>
+      <article className={`w-full landscape:px-[10%] flex justify-center relative overflow-hidden`}>
+        <div id='cms1' className={`${s3 ? 'w-1/3' : 'w-[46%]'} flex flex-col justify-center items-center gap-5`}>
           <img src={compare[s1.m].img} alt={compare[s1.m].name} className='scale-125' />
           <div
             onClick={() => {
@@ -42,7 +42,7 @@ const Third = () => {
                 setO3(false);
               }
             }}
-            className={`w-[95%] lg:w-[80%] h-16 px-5 flex-col justify-center border ${o1 ? 'bg-gray-200 rounded-t-xl border-black' : 'bg-gray-100 rounded-xl border-transparent'} cursor-pointer duration-150 relative`}
+            className={`w-[95%] landscape:w-[80%] h-16 px-5 flex flex-col justify-center border ${o1 ? 'bg-gray-200 dark:bg-zinc-600 rounded-t-xl border-black' : 'bg-gray-100 dark:bg-zinc-500 rounded-xl border-transparent'} cursor-pointer duration-150 relative`}
           >
             <h1 className='text-2xl font-semibold select-none'>{compare[s1.m].name}</h1>
             <h2 className='text-lg select-none'>{compare[s1.m].v[s1.v].name}</h2>
@@ -53,7 +53,7 @@ const Third = () => {
           </div>
           <Info c1={c1} />
         </div>
-        <div id='cms2' className={`${s3 ? 'w-1/3' : 'w-[46%]'} flex-col flex-center gap-5`}>
+        <div id='cms2' className={`${s3 ? 'w-1/3' : 'w-[46%]'} flex flex-col justify-center items-center gap-5`}>
           <img src={compare[s2.m].img} alt={compare[s2.m].name} className='scale-125' />
           <div
             onClick={() => {
@@ -63,7 +63,7 @@ const Third = () => {
                 setO3(false);
               }
             }}
-            className={`w-[95%] lg:w-[80%] h-16 px-5 flex-col justify-center border ${o2 ? 'bg-gray-200 rounded-t-xl border-black' : 'bg-gray-100 rounded-xl border-transparent'} cursor-pointer duration-150 relative`}
+            className={`w-[95%] landscape:w-[80%] h-16 px-5 flex flex-col justify-center border ${o2 ? 'bg-gray-200 dark:bg-zinc-600 rounded-t-xl border-black' : 'bg-gray-100 dark:bg-zinc-500 rounded-xl border-transparent'} cursor-pointer duration-150 relative`}
           >
             <h1 className='text-2xl font-semibold select-none'>{compare[s2.m].name}</h1>
             <h2 className='text-lg select-none'>{compare[s2.m].v[s2.v].name}</h2>
@@ -74,7 +74,7 @@ const Third = () => {
           </div>
           <Info c2={c2} />
         </div>
-        <div id='cms3' className={`portrait:hidden ${s3 ? 'w-1/3' : 'w-[10%]'} flex-col flex-center gap-5`}>
+        <div id='cms3' className={`portrait:hidden ${s3 ? 'w-1/3' : 'w-[10%]'} flex flex-col justify-center items-center gap-5`}>
           {s3 ? (
             <img src={compare[s3.m].img} alt={compare[s3.m].name} className='scale-125' />
           ) : (
@@ -85,7 +85,7 @@ const Third = () => {
                 setS3(0 !== s1.m && 0 !== s2.m ? { m: 0, v: 0 } : 1 !== s1.m && 1 !== s2.m ? { m: 1, v: 0 } : 2 !== s1.m && 2 !== s2.m ? { m: 2, v: 0 } : 3 !== s1.m && 3 !== s2.m && { m: 3, v: 0 });
                 gsap.from('#cms3', { xPercent: 100, opacity: 0 });
               }}
-              className='absolute top-[10%] right-[8%] hidden lg:block'
+              className='absolute top-[10%] right-[8%] hidden landscape:block'
             >
               <img src='/svgs/plus.svg' alt='plus' className='w-8 h-8 border border-black rounded-full' />
             </button>
@@ -98,7 +98,7 @@ const Third = () => {
                 setO3(true);
               }
             }}
-            className={`${!s3 && 'hidden'} w-[80%] h-16 px-5 flex-col justify-center border ${o3 ? 'bg-gray-200 rounded-t-xl border-black' : 'bg-gray-100 rounded-xl border-transparent'} cursor-pointer duration-150 relative`}
+            className={`${!s3 && 'hidden'} w-[80%] h-16 px-5 flex flex-col justify-center border ${o3 ? 'bg-gray-200 dark:bg-zinc-600 rounded-t-xl border-black' : 'bg-gray-100 dark:bg-zinc-500 rounded-xl border-transparent'} cursor-pointer duration-150 relative`}
           >
             <h1 className='text-2xl font-semibold select-none'>{compare[s3?.m]?.name}</h1>
             <h2 className='text-lg select-none'>{compare[s3?.m]?.v[s3?.v]?.name}</h2>
