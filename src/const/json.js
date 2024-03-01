@@ -3,7 +3,7 @@ export const cars = [
   { name: 'Model 3', ab: 'm3', img: '/images/model3.avif', link: '/model3' },
   { name: 'Model X', ab: 'mx', img: '/images/modelX.avif', link: '/modelx' },
   { name: 'Model Y', ab: 'my', img: '/images/modelY.avif', link: '/modely' },
-  { name: 'CyberTruck', ab: 'ct', img: '/images/cyberTruck.avif', link: '/cyberTruck' },
+  { name: 'Cyber Truck', ab: 'ct', img: '/images/cyberTruck.avif', link: '/cyberTruck' },
 ];
 
 export const compare = [
@@ -55,11 +55,11 @@ export const compare1 = [
 ];
 
 export const details = {
-  models: { name: 'Model S', img: '/images/modelS.avif', vid: '/videos/modelS.webm', prc: { va: 'From $71,090', tx: 'After Est. Gas Savings' }, dst: { va: '359 mi', tx: 'Range (EPA est.)' }, tme: { va: '1.99 s', tx: '0-60 mph' }, spd: { va: '200 mph', tx: 'Top Speed' }, pwr: { va: '1,020 hp', tx: 'Peak Power' } },
-  model3: { name: 'Model 3', img: '/images/model3.avif', vid: '/videos/model3.mp4', prc: { va: 'From $329 /mo', tx: 'Lease model' }, dst: { va: '341 mi', tx: 'Range (EPA est.)' }, tme: { va: '4.2 s', tx: '0-60 mph' }, spd: { va: '125 mph', tx: 'Top Speed' }, pwr: { va: 'AWD', tx: 'Dual Motor' } },
-  modelx: { name: 'Model X', img: '/images/modelX.avif', vid: '/videos/modelX.webm', prc: { va: 'From $68,590', tx: 'After Federal Tax Credit & Est. Gas Savings' }, dst: { va: '326 mi', tx: 'Range (EPA est.)' }, tme: { va: '2.5 s', tx: '0-60 mph' }, spd: { va: '149 mph', tx: 'Top Speed' }, pwr: { va: '1,020 hp', tx: 'Peak Power' } },
-  modely: { name: 'Model Y', img: '/images/modelY.avif', vid: '/videos/modelY.webm', prc: { va: 'From $31,890', tx: 'After Est. Gas Savings' }, dst: { va: '285 mi', tx: 'Range (EPA est.)' }, tme: { va: '3.5 s', tx: '0-60 mph' }, spd: { va: '135 mph', tx: 'Top Speed' }, pwr: { va: '1,020 hp', tx: 'Peak Power' } },
-  cyberTruck: { name: 'CyberTruck', img: '/images/cyberTruck.avif', vid: '/videos/cyberTruck.webm', prc: { va: 'From $57,390', tx: 'After Est. Gas Savings' }, dst: { va: '340 mi', tx: 'Range (EPA est.)' }, tme: { va: '2.6 s', tx: '0-60 mph' }, spd: { va: '130 mph', tx: 'Top Speed' }, pwr: { va: '11,000 lbs', tx: 'Towing' } },
+  models: { name: 'Model S', img: '/images/modelS.avif', vid: { wbm: '/videos/modelS.webm', mp4: 'videos/modelS.mp4' }, prc: { va: 'From $71,090', tx: 'After Est. Gas Savings' }, dst: { va: '359 mi', tx: 'Range (EPA est.)' }, tme: { va: '1.99 s', tx: '0-60 mph' }, spd: { va: '200 mph', tx: 'Top Speed' }, pwr: { va: '1,020 hp', tx: 'Peak Power' } },
+  model3: { name: 'Model 3', img: '/images/model3.avif', vid: { wbm: '/videos/model3.webm', mp4: 'videos/model3.mp4' }, prc: { va: 'From $329 /mo', tx: 'Lease model' }, dst: { va: '341 mi', tx: 'Range (EPA est.)' }, tme: { va: '4.2 s', tx: '0-60 mph' }, spd: { va: '125 mph', tx: 'Top Speed' }, pwr: { va: 'AWD', tx: 'Dual Motor' } },
+  modelx: { name: 'Model X', img: '/images/modelX.avif', vid: { wbm: '/videos/modelX.webm', mp4: 'videos/modelX.mp4' }, prc: { va: 'From $68,590', tx: 'After Federal Tax Credit & Est. Gas Savings' }, dst: { va: '326 mi', tx: 'Range (EPA est.)' }, tme: { va: '2.5 s', tx: '0-60 mph' }, spd: { va: '149 mph', tx: 'Top Speed' }, pwr: { va: '1,020 hp', tx: 'Peak Power' } },
+  modely: { name: 'Model Y', img: '/images/modelY.avif', vid: { wbm: '/videos/modelY.webm', mp4: 'videos/modelY.mp4' }, prc: { va: 'From $31,890', tx: 'After Est. Gas Savings' }, dst: { va: '285 mi', tx: 'Range (EPA est.)' }, tme: { va: '3.5 s', tx: '0-60 mph' }, spd: { va: '135 mph', tx: 'Top Speed' }, pwr: { va: '1,020 hp', tx: 'Peak Power' } },
+  cyberTruck: { name: 'Cyber Truck', img: '/images/cyberTruck.avif', vid: { wbm: '/videos/cyberTruck.webm', mp4: 'videos/cyberTruck.mp4' }, prc: { va: 'From $57,390', tx: 'After Est. Gas Savings' }, dst: { va: '340 mi', tx: 'Range (EPA est.)' }, tme: { va: '2.6 s', tx: '0-60 mph' }, spd: { va: '130 mph', tx: 'Top Speed' }, pwr: { va: '11,000 lbs', tx: 'Towing' } },
   // solarPanel: { name: 'Solar Panel', img: '/images/panel.avif', vid: '/videos/modelS.webm', prc: { va: 'From $71,090', tx: 'After Est. Gas Savings' }, dst: { va: '359 mi', tx: 'Range (EPA est.)' }, tme: { va: '1.99 s', tx: '0-60 mph' }, spd: { va: '200 mph', tx: 'Top Speed' }, pwr: { va: '1,020 hp', tx: 'Peak Power' } },
   // solarRoog: { name: 'Solar Roof', img: '/images/roof.avif', vid: '/videos/modelS.webm', prc: { va: 'From $71,090', tx: 'After Est. Gas Savings' }, dst: { va: '359 mi', tx: 'Range (EPA est.)' }, tme: { va: '1.99 s', tx: '0-60 mph' }, spd: { va: '200 mph', tx: 'Top Speed' }, pwr: { va: '1,020 hp', tx: 'Peak Power' } },
   // poweWall: { name: 'Powerwall', img: '/images/powerWall.avif', vid: '/videos/modelS.webm', prc: { va: 'From $71,090', tx: 'After Est. Gas Savings' }, dst: { va: '359 mi', tx: 'Range (EPA est.)' }, tme: { va: '1.99 s', tx: '0-60 mph' }, spd: { va: '200 mph', tx: 'Top Speed' }, pwr: { va: '1,020 hp', tx: 'Peak Power' } },
