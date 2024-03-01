@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { scrollTo } from '../../gsap/gsap';
 import SideBar from '../../assets/utils/sideBar';
 import Side from './side';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const NavBar = () => {
   const { pathname } = useLocation();
@@ -58,9 +58,9 @@ const NavBar = () => {
         </>
       ) : (
         <section className={`${!first ? 'w-full shadow-2xl' : 'w-1/2'} h-full flex justify-evenly items-center duration-500`}>
-          <a href='/' className='h-[60%]'>
+          <Link to='/' className='h-[60%]'>
             <img src='/svgs/teslaR.svg' alt='Tesla' className='h-full aspect-square hover:scale-125 duration-300' />
-          </a>
+          </Link>
         </section>
       )}
     </nav>
