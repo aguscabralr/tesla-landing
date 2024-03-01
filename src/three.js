@@ -12,7 +12,7 @@ export const loadModel = () => {
   const scene = new THREE.Scene();
 
   const camera = new THREE.PerspectiveCamera(60, sizes.width / sizes.height, 1, 1000);
-  camera.position.y = 1;
+  camera.position.y = 1.1;
   camera.position.z = 2.5;
   scene.add(camera);
 
@@ -32,7 +32,6 @@ export const loadModel = () => {
     // teslaM.traverse((child) => {
     //   if (child.isMesh) child.material = material;
     // });
-
     scene.add(teslaM);
   });
 
@@ -40,7 +39,11 @@ export const loadModel = () => {
   light1.position.set(-1, 0, -1);
   const light2 = new THREE.DirectionalLight(0xffffff, 1);
   light2.position.set(1, 0, 1);
-  scene.add(light1, light2);
+  const light3 = new THREE.DirectionalLight(0xffffff, 1);
+  light3.position.set(1, 0, -1);
+  const light4 = new THREE.DirectionalLight(0xffffff, 1);
+  light4.position.set(-1, 0, 1);
+  scene.add(light1, light2, light3, light4);
 
   // const helperLight = new THREE.DirectionalLightHelper(light, 0.5);
   // scene.add(helperLight);
@@ -53,6 +56,17 @@ export const loadModel = () => {
   renderer.toneMappingExposure = 3;
 
   logo.appendChild(renderer.domElement);
+
+  const rezise = () => {
+    sizes.width = logo.getBoundingClientRect().width;
+    sizes.height = logo.getBoundingClientRect().height;
+
+    camera.aspect = sizes.width / sizes.height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(sizes.width, sizes.height);
+  };
+
+  window.addEventListener('resize', rezise);
 
   const animate = () => {
     const clock = new THREE.Clock();
