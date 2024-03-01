@@ -57,7 +57,6 @@ export const sT = () => {
       scrub: 2,
       start: 'top 80%',
       end: '95% bottom',
-      markers: true,
     },
   });
 
