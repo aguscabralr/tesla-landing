@@ -24,15 +24,9 @@ export const scrollTo = (href) => {
 export const wC = () => {
   const tl = gsap.timeline();
   if (wConfig.ratio < 1) {
-    tl.from('#tsct', { yPercent: -100 }, '+=1');
-    tl.from('#lghb', { yPercent: -300 }, '-=0.45');
     tl.from('#lg', { xPercent: -200 });
-    tl.from('#nav', { yPercent: -100, opacity: 0 });
   } else {
-    tl.from('#tsct', { xPercent: -100 }, '+=1');
-    tl.from('#lgwb', { xPercent: -300 }, '-=0.45');
     tl.from('#lg', { yPercent: -200 });
-    tl.from('#nav', { yPercent: -100, opacity: 0 });
   }
 };
 
@@ -41,12 +35,12 @@ export const sT = () => {
     scrollTrigger: {
       trigger: '#second',
       scrub: 2,
-      start: 'top 80%',
-      end: '90% bottom',
+      start: 'top 70%',
+      end: '80% bottom',
     },
   });
 
-  vhtl.from('#vhtx', { yPercent: 100 });
+  vhtl.from('#vhtx', { yPercent: 100, opacity: 0 });
   const showCars = gsap.utils.toArray('.cars');
   showCars.map((car) => vhtl.from(car, { xPercent: 100, opacity: 0 }));
   vhtl.from('#shower', { yPercent: 100, opacity: 0 });
@@ -55,8 +49,8 @@ export const sT = () => {
     scrollTrigger: {
       trigger: '#third',
       scrub: 2,
-      start: 'top 80%',
-      end: '95% bottom',
+      start: 'top 70%',
+      end: '70% bottom',
     },
   });
 
@@ -67,6 +61,15 @@ export const sT = () => {
   cmtl.from('#cms3', { xPercent: 100, opacity: 0 });
   cmtl.from('#abtn', { xPercent: 100, rotate: 180, opacity: 0 });
 
+  const eltl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#third',
+      scrub: 2,
+      start: '65% bottom',
+      end: '90% bottom',
+    },
+  });
+
   const bsp = gsap.utils.toArray('.bsp');
   const rng = gsap.utils.toArray('.rng');
   const stg = gsap.utils.toArray('.stg');
@@ -74,13 +77,13 @@ export const sT = () => {
   const drv = gsap.utils.toArray('.drv');
   const acc = gsap.utils.toArray('.acc');
   const spd = gsap.utils.toArray('.spd');
-  bsp.map((ele) => cmtl.from(ele, 0.08, { yPercent: 100, opacity: 0 }));
-  rng.map((ele) => cmtl.from(ele, 0.08, { yPercent: 100, opacity: 0 }));
-  stg.map((ele) => cmtl.from(ele, 0.08, { yPercent: 100, opacity: 0 }));
-  crg.map((ele) => cmtl.from(ele, 0.08, { yPercent: 100, opacity: 0 }));
-  drv.map((ele) => cmtl.from(ele, 0.08, { yPercent: 100, opacity: 0 }));
-  acc.map((ele) => cmtl.from(ele, 0.08, { yPercent: 100, opacity: 0 }));
-  spd.map((ele) => cmtl.from(ele, 0.08, { yPercent: 100, opacity: 0 }));
+  bsp.map((ele) => eltl.from(ele, 1, { yPercent: 100, opacity: 0 }));
+  rng.map((ele) => eltl.from(ele, 1, { yPercent: 100, opacity: 0 }));
+  stg.map((ele) => eltl.from(ele, 1, { yPercent: 100, opacity: 0 }));
+  crg.map((ele) => eltl.from(ele, 1, { yPercent: 100, opacity: 0 }));
+  drv.map((ele) => eltl.from(ele, 1, { yPercent: 100, opacity: 0 }));
+  acc.map((ele) => eltl.from(ele, 1, { yPercent: 100, opacity: 0 }));
+  spd.map((ele) => eltl.from(ele, 1, { yPercent: 100, opacity: 0 }));
 };
 
 export const crx = () => {
