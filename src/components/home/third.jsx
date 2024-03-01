@@ -32,7 +32,7 @@ const Third = () => {
         </h2>
       </article>
       <article className={`w-full landscape:px-[10%] flex justify-center relative overflow-hidden`}>
-        <div id='cms1' className={`${s3 ? 'w-1/3' : 'w-[46%]'} flex flex-col justify-center items-center gap-5`}>
+        <div id='cms1' className={`${s3 ? 'w-1/3' : 'w-[45%]'} flex flex-col justify-center items-center gap-5`}>
           <img src={compare[s1.m].img} alt={compare[s1.m].name} className='scale-125' />
           <div
             onClick={() => {
@@ -42,10 +42,10 @@ const Third = () => {
                 setO3(false);
               }
             }}
-            className={`w-[95%] landscape:w-[80%] h-16 px-5 flex flex-col justify-center border ${o1 ? 'bg-gray-200 dark:bg-zinc-600 rounded-t-xl border-black' : 'bg-gray-100 dark:bg-zinc-500 rounded-xl border-transparent'} cursor-pointer duration-150 relative`}
+            className={`w-[95%] landscape:w-[80%] h-16 px-2 landscape:px-5 flex flex-col justify-center  ${o1 ? 'bg-gray-200 dark:bg-zinc-600 rounded-t-xl' : 'bg-gray-100 dark:bg-zinc-500 rounded-xl'} cursor-pointer duration-150 relative`}
           >
             <h1 className='text-2xl font-semibold select-none'>{compare[s1.m].name}</h1>
-            <h2 className='text-lg select-none'>{compare[s1.m].v[s1.v].name}</h2>
+            <h2 className='text-lg select-none line-clamp-1'>{compare[s1.m].v[s1.v].name}</h2>
             <button onClick={() => o1 && setO1(false)} className='absolute right-5'>
               <img src={o1 ? '/svgs/close.svg' : '/svgs/downA.svg'} alt='open' className='w-6 h-6' />
             </button>
@@ -53,7 +53,7 @@ const Third = () => {
           </div>
           <Info c1={c1} />
         </div>
-        <div id='cms2' className={`${s3 ? 'w-1/3' : 'w-[46%]'} flex flex-col justify-center items-center gap-5`}>
+        <div id='cms2' className={`${s3 ? 'w-1/3' : 'w-[45%]'} flex flex-col justify-center items-center gap-5`}>
           <img src={compare[s2.m].img} alt={compare[s2.m].name} className='scale-125' />
           <div
             onClick={() => {
@@ -63,10 +63,10 @@ const Third = () => {
                 setO3(false);
               }
             }}
-            className={`w-[95%] landscape:w-[80%] h-16 px-5 flex flex-col justify-center border ${o2 ? 'bg-gray-200 dark:bg-zinc-600 rounded-t-xl border-black' : 'bg-gray-100 dark:bg-zinc-500 rounded-xl border-transparent'} cursor-pointer duration-150 relative`}
+            className={`w-[95%] landscape:w-[80%] h-16 px-2 landscape:px-5 flex flex-col justify-center border ${o2 ? 'bg-gray-200 dark:bg-zinc-600 rounded-t-xl border-black' : 'bg-gray-100 dark:bg-zinc-500 rounded-xl border-transparent'} cursor-pointer duration-150 relative`}
           >
             <h1 className='text-2xl font-semibold select-none'>{compare[s2.m].name}</h1>
-            <h2 className='text-lg select-none'>{compare[s2.m].v[s2.v].name}</h2>
+            <h2 className='text-lg select-none line-clamp-1'>{compare[s2.m].v[s2.v].name}</h2>
             <button onClick={() => o2 && setO2(false)} className='absolute right-5'>
               <img src={o2 ? '/svgs/close.svg' : '/svgs/downA.svg'} alt='open' className='w-6 h-6' />
             </button>
@@ -98,10 +98,10 @@ const Third = () => {
                 setO3(true);
               }
             }}
-            className={`${!s3 && 'hidden'} w-[80%] h-16 px-5 flex flex-col justify-center border ${o3 ? 'bg-gray-200 dark:bg-zinc-600 rounded-t-xl border-black' : 'bg-gray-100 dark:bg-zinc-500 rounded-xl border-transparent'} cursor-pointer duration-150 relative`}
+            className={`${!s3 && 'hidden'} w-[80%] h-16 px-2 landscape:px-5flex flex-col justify-center border ${o3 ? 'bg-gray-200 dark:bg-zinc-600 rounded-t-xl border-black' : 'bg-gray-100 dark:bg-zinc-500 rounded-xl border-transparent'} cursor-pointer duration-150 relative`}
           >
             <h1 className='text-2xl font-semibold select-none'>{compare[s3?.m]?.name}</h1>
-            <h2 className='text-lg select-none'>{compare[s3?.m]?.v[s3?.v]?.name}</h2>
+            <h2 className='text-lg select-none line-clamp-1'>{compare[s3?.m]?.v[s3?.v]?.name}</h2>
             <button onClick={() => o3 && setO3(false)} className='absolute right-5'>
               <img src={o3 ? '/svgs/close.svg' : '/svgs/downA.svg'} alt='open' className='w-6 h-6' />
             </button>
