@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { cars } from '../../const/json';
 import { previous, selected } from '../../gsap/gsap';
+import { Link } from 'react-router-dom';
 
 const Second = () => {
   const [select, setSelect] = useState(cars[0]);
@@ -41,11 +42,11 @@ const Second = () => {
           })}
         </div>
         <div id='shower' className={`w-full h-[calc((100vh-64px)*3/4)] bg-grl dark:bg-grd flex flex-col items-start relative overflow-hidden`}>
-          <a id='select' href={select?.link} className='w-full h-full flex flex-col landscape:flex-row justify-center items-center text-white portrait:text-black dark:text-black portrait:dark:text-white hover:text-black dark:hover:text-white'>
+          <Link id='select' to={select?.link} className='w-full h-full flex flex-col landscape:flex-row justify-center items-center text-white portrait:text-black dark:text-black portrait:dark:text-white hover:text-black dark:hover:text-white'>
             <h2 className='text-[6vw]'>{select?.name.split(' ')[0]}</h2>
             <img src={select?.img} alt={select?.name} className='z-10' />
             <h2 className='text-[6vw]'>{select?.name.split(' ')[1]}</h2>
-          </a>
+          </Link>
           <div id='prev' className='w-full h-full flex flex-col landscape:flex-row justify-center items-center text-white portrait:text-black dark:text-black portrait:dark:text-white absolute left-[-100%]'>
             <h2 className='text-[6vw]'>{prev?.name.split(' ')[0]}</h2>
             <img src={prev?.img} alt={prev?.name} className='w-full landscape:w-auto landscape:h-full p-5 z-10' />
