@@ -5,6 +5,7 @@ import {
   //  chargings,
   //   energy
 } from '../../const/json';
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 const Side = ({ sideBar, setSideBar }) => {
@@ -48,9 +49,9 @@ const Side = ({ sideBar, setSideBar }) => {
           <div className={`${vhcls ? 'h-64' : 'h-0'} flex flex-col items-center gap-2 overflow-hidden duration-700`}>
             {cars.map((car) => {
               return (
-                <a href={car.link} key={car.name} className={`text-gry landscape:hover:text-black dark:landscape:hover:text-white active:text-dark dark:active:text-white`}>
+                <Link to={car.link} key={car.name} className={`text-gry landscape:hover:text-black dark:landscape:hover:text-white active:text-dark dark:active:text-white`}>
                   {car.name}
-                </a>
+                </Link>
               );
             })}
             <button
