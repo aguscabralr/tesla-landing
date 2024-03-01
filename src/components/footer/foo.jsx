@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import TeslaLT from '../../assets/tesla/teslaLT';
 
 const Foo = () => {
@@ -18,62 +19,50 @@ const Foo = () => {
             </button>
           </div>
           <div className='landscape:w-1/4 h-full portrait:pb-3 flex flex-col justify-center items-center landscape:items-start gap-y-3'>
-            <a href='/models' className='text-[3vw] landscape:text-[1.2vw] text-black hover:text-white hover:underline duration-200'>
+            <Link to='/models' className='text-[3vw] landscape:text-[1.2vw] text-black hover:text-white hover:underline duration-200'>
               Model S
-            </a>
-            <a href='/model3' className='text-[3vw] landscape:text-[1.2vw] text-black hover:text-white hover:underline duration-200'>
+            </Link>
+            <Link to='/model3' className='text-[3vw] landscape:text-[1.2vw] text-black hover:text-white hover:underline duration-200'>
               Model 3
-            </a>
-            <a href='/modelx' className='text-[3vw] landscape:text-[1.2vw] text-black hover:text-white hover:underline duration-200'>
+            </Link>
+            <Link to='/modelx' className='text-[3vw] landscape:text-[1.2vw] text-black hover:text-white hover:underline duration-200'>
               Model X
-            </a>
-            <a href='/modely' className='text-[3vw] landscape:text-[1.2vw] text-black hover:text-white hover:underline duration-200'>
+            </Link>
+            <Link to='/modely' className='text-[3vw] landscape:text-[1.2vw] text-black hover:text-white hover:underline duration-200'>
               Model Y
-            </a>
+            </Link>
           </div>
           <div className='landscape:w-1/4 h-full portrait:pb-3 flex flex-col justify-center items-center landscape:items-start gap-y-3'>
-            <a href='/cyberTruck' className='text-[3vw] landscape:text-[1.2vw] text-black hover:text-white hover:underline duration-200'>
+            <Link to='/cyberTruck' className='text-[3vw] landscape:text-[1.2vw] text-black hover:text-white hover:underline duration-200'>
               CyberTruck
-            </a>
-            <a href='/roadster' className='text-[3vw] landscape:text-[1.2vw] text-black hover:text-white hover:underline duration-200'>
-              Roadster
-            </a>
-            <a href='/semi' className='text-[3vw] landscape:text-[1.2vw] text-black hover:text-white hover:underline duration-200'>
-              Semi
-            </a>
+            </Link>
+            <button className='text-[3vw] landscape:text-[1.2vw] text-black hover:text-white hover:underline duration-200'>Roadster</button>
+            <button className='text-[3vw] landscape:text-[1.2vw] text-black hover:text-white hover:underline duration-200'>Semi</button>
           </div>
         </div>
       </article>
       <article className='w-full h-[20%] p-4 flex portrait:flex-col gap-y-5 justify-between border-t text-gray-400 xs:text-xs sm:text-sm md:text-base'>
         <div className='flex flex-col gap-5 landscape:hidden'>
-          <a href='/regions' className='flex items-center gap-2 hover:text-white duration-300'>
+          <button className='flex items-center gap-2 hover:text-white duration-300'>
             <img src='/svgs/region.svg' alt='Región' className='w-5 h-5 invert' />
             Argentina
-          </a>
-          <a href='/term' className='hover:text-white duration-300'>
-            Términos y condiciones
-          </a>
-          <a href='/poli' className='hover:text-white duration-300'>
-            Política de privacidad y cookies
-          </a>
+          </button>
+          <button className='hover:text-white duration-300'>Términos y condiciones</button>
+          <button className='hover:text-white duration-300'>Política de privacidad y cookies</button>
           <p>© 2024 Tesla by aguscabralr</p>
         </div>
         <div className='flex gap-5 portrait:hidden'>
-          <a href='/regions' className='flex gap-2 hover:text-white duration-300'>
+          <button className='flex gap-2 hover:text-white duration-300'>
             <img src='/svgs/region.svg' alt='Región' className='w-5 h-5 invert' />
             Argentina
-          </a>
+          </button>
           <span>|</span>
           <p>© 2024 Tesla by aguscabralr</p>
         </div>
         <div className='flex gap-5 portrait:hidden'>
-          <a href='/term' className='hover:text-white duration-300'>
-            Términos y condiciones
-          </a>
+          <button className='hover:text-white duration-300'>Términos y condiciones</button>
           <span>|</span>
-          <a href='/poli' className='hover:text-white duration-300'>
-            Política de privacidad y cookies
-          </a>
+          <button className='hover:text-white duration-300'>Política de privacidad y cookies</button>
         </div>
       </article>
     </section>
