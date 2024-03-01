@@ -1,21 +1,29 @@
+import { useEffect, useState } from 'react';
 import First from '../components/home/first';
 import Second from '../components/home/second';
 import Third from '../components/home/third';
 import Foo from '../components/footer/foo';
-import { useState } from 'react';
+import { sT, wC } from '../gsap/gsap';
+import { loadModel } from '../three';
 
 // eslint-disable-next-line react/prop-types
-const Home = ({ load }) => {
-  const [canva, setCanva] = useState(true);
+const Home = () => {
+  const [load, setLoad] = useState(false);
 
-  if (load) {
+  useEffect(() => {
     setTimeout(() => {
-      setCanva(false);
-    }, 1000);
-  }
+      setLoad(true);
+    }, 500);
+
+    if (load) {
+      loadModel();
+      wC();
+      sT();
+    }
+  }, [load]);
+
   return (
     <section>
-      <article className={`w-full h-screen bg-gry absolute top-0 left-0 ${canva ? 'z-50' : 'z-0'}`}></article>
       <First />
       <Second />
       <Third />
