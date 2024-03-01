@@ -60,7 +60,7 @@ const Foo = () => {
         </div>
         <div className='flex gap-5 portrait:hidden'>
           <a href='/regions' className='flex gap-2 hover:text-white duration-300'>
-            <img src='/svg/region.svg' alt='Región' className='w-5 h-5 invert' />
+            <img src='/svgs/region.svg' alt='Región' className='w-5 h-5 invert' />
             Argentina
           </a>
           <span>|</span>
