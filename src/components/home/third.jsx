@@ -87,7 +87,7 @@ const Third = () => {
               }}
               className='absolute top-[10%] right-[8%] hidden landscape:block'
             >
-              <img src='/svgs/plus.svg' alt='plus' className='w-8 h-8 border border-black rounded-full' />
+              <img src='/svgs/plus.svg' alt='plus' className='w-8 h-8 border border-black rounded-full dark:invert' />
             </button>
           )}
           <div
@@ -109,7 +109,7 @@ const Third = () => {
           </div>
           <Info c3={c3} h={!s3} />
           <button type='button' onClick={() => setS3(null)} className={`${!s3 && 'hidden'} absolute top-2 right-2`}>
-            <img src='/svgs/close.svg' alt='close' className='w-8 h-8 border border-black rounded-full' />
+            <img src='/svgs/close.svg' alt='close' className='w-8 h-8 border border-black rounded-full dark:invert' />
           </button>
         </div>
       </article>
