@@ -1,8 +1,8 @@
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/navbar/nav';
 import Home from './rutes/home';
 import Detail from './rutes/detail';
-import { useEffect, useState } from 'react';
 import { sT, wC } from './gsap/gsap';
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
       wC();
       sT();
     }
-  });
+  }, [load]);
 
   return (
     <main className='w-full min-h-svh bg-white dark:bg-zinc-700 pop'>
